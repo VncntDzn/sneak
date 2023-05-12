@@ -3,15 +3,16 @@
 
 .root {
   padding: 1rem;
-  background-color: $black;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.5);
   color: $white;
+  background-color: $black;
   display: flex;
   align-items: center;
   justify-content: space-between;
 
   @include lg() {
     padding: 1rem 15rem;
+    height: 3rem;
   }
   div:first-child {
     display: flex;

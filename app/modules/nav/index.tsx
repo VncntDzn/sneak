@@ -8,10 +8,16 @@ const Nav = () => {
   return (
     <nav className={styles.root}>
       <div>
-        <RiMenuFill className={styles.burger} size={25} />
-        <Image src={Logo} height={30} width={30} alt="Sneak logo" />
+        <RiMenuFill role="button" className={styles.burger} size={25} />
+        <Image
+          role="button"
+          src={Logo}
+          height={30}
+          width={30}
+          alt="Sneak logo"
+        />
       </div>
-      <Image src={Basket} height={30} width={30} alt="Basket" />
+      <Image role="button" src={Basket} height={30} width={30} alt="Basket" />
     </nav>
   );
 };
