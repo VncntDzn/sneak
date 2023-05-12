@@ -1,0 +1,26 @@
+@import "@/scss/variables";
+@import "@/scss/mixins";
+
+.root {
+  padding: 1rem;
+  background-color: $black;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+  color: $white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @include lg() {
+    padding: 1rem 15rem;
+  }
+  div:first-child {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .burger {
+    @include lg() {
+      display: none;
+    }
+  }
+}
