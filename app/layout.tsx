@@ -1,8 +1,11 @@
-import { Inter } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "normalize.css";
 import Nav from "@/modules/nav";
 import styles from "./layout.module.scss";
-const inter = Inter({ subsets: ["latin"] });
+const inter = Poppins({
+  weight: ["300", "500", "600", "700"],
+  subsets: ["latin"],
+});
 
 export const metadata = {
   title: "Sneak",
@@ -19,6 +22,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <Nav />
         <main className={styles.root}>{children}</main>
+        <footer>I'm a footer</footer>
       </body>
     </html>
   );

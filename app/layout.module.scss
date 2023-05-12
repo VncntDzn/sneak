@@ -2,6 +2,6 @@
 @import "@/scss/variables";
 .root {
   @include lg() {
-    padding: 1rem 15rem;
+    padding: 0 15rem;
   }
 }
