@@ -1,7 +1,4 @@
 @import "@/scss/mixins";
 @import "@/scss/variables";
 .root {
-  @include lg() {
-    padding: 0 15rem;
-  }
 }

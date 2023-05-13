@@ -1,5 +1,11 @@
+import { Hero } from "@/modules";
+
 const Home = () => {
-  return <div style={{ background: "red" }}>Homex</div>;
+  return (
+    <div>
+      <Hero />
+    </div>
+  );
 };
 
 export default Home;
