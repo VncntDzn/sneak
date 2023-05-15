@@ -1,14 +1,61 @@
+"use client";
 import Image from "next/image";
+import Link from "next/link";
+import { useState } from "react";
 import { RiMenuFill } from "react-icons/ri";
 import Basket from "./assets/basket.svg";
 import Logo from "./assets/logo.svg";
 import styles from "./nav.module.scss";
+import routes from "./routes";
+
+const Routes = () => {
+  return (
+    <div className={styles.links}>
+      {routes.map(({ name, path }) => (
+        <Link href={path} key={name} style={{ textDecoration: "none" }}>
+          <span className={styles.link}>{name}</span>
+        </Link>
+      ))}
+    </div>
+  );
+};
 
 const Nav = () => {
+  const [openMobileMenu, setMobileMenu] = useState(false);
+
+  const handleToggleMenu = () => {
+    setMobileMenu(!openMobileMenu);
+  };
+
+  const renderMobileMenu = () => {
+    if (openMobileMenu) {
+      return (
+        <div className={styles.drawer}>
+          <RiMenuFill
+            role="button"
+            onClick={handleToggleMenu}
+            className={styles.burger}
+            size={25}
+          />
+          <Routes />
+        </div>
+      );
+    }
+    return (
+      <div className={styles.desktopContainer}>
+        <Routes />
+      </div>
+    );
+  };
   return (
     <nav className={styles.root}>
       <div>
-        <RiMenuFill role="button" className={styles.burger} size={25} />
+        <RiMenuFill
+          role="button"
+          onClick={handleToggleMenu}
+          className={styles.burger}
+          size={25}
+        />
         <Image
           role="button"
           src={Logo}
@@ -17,6 +64,7 @@ const Nav = () => {
           alt="Sneak logo"
         />
       </div>
+      {renderMobileMenu()}
       <Image role="button" src={Basket} height={30} width={30} alt="Basket" />
     </nav>
   );
