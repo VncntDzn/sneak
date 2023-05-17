@@ -1,7 +1,9 @@
 "use client";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { isMobileOnly } from "react-device-detect";
 import { RiMenuFill } from "react-icons/ri";
 import Basket from "./assets/basket.svg";
 import Logo from "./assets/logo.svg";
@@ -22,23 +24,33 @@ const Routes = () => {
 
 const Nav = () => {
   const [openMobileMenu, setMobileMenu] = useState(false);
-
   const handleToggleMenu = () => {
     setMobileMenu(!openMobileMenu);
   };
 
   const renderMobileMenu = () => {
-    if (openMobileMenu) {
+    if (isMobileOnly) {
       return (
-        <div className={styles.drawer}>
+        <motion.div
+          initial={{ x: "-100%" }}
+          animate={{
+            x: `${openMobileMenu ? 0 : "-100%"}`,
+          }}
+          transition={{
+            type: "tween",
+          }}
+          className={styles.drawer}
+        >
           <RiMenuFill
             role="button"
             onClick={handleToggleMenu}
             className={styles.burger}
             size={25}
           />
-          <Routes />
-        </div>
+          <div style={{ height: "10rem" }}>
+            <Routes />
+          </div>
+        </motion.div>
       );
     }
     return (
