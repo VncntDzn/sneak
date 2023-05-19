@@ -1,0 +1,21 @@
+@import "@/scss/variables";
+@import "@/scss/mixins";
+
+.root {
+  display: flex;
+  justify-content: space-evenly;
+  font-style: italic;
+  background-color: $gray;
+  font-size: large;
+  flex-wrap: wrap;
+
+  @include lg() {
+    padding: 2rem 0;
+  }
+  & > h4 {
+    margin: 0.5rem;
+    @include lg() {
+      margin: 1rem;
+    }
+  }
+}

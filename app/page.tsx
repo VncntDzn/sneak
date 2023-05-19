@@ -1,9 +1,10 @@
-import { Hero } from "@/modules";
+import { Hero, Banner } from "@/modules";
 
 const Home = () => {
   return (
     <div>
       <Hero />
+      <Banner />
     </div>
   );
 };
