@@ -8,7 +8,7 @@
   background-color: $gray;
   font-size: large;
   flex-wrap: wrap;
-
+  padding: 1rem 0;
   @include lg() {
     padding: 2rem 0;
   }
