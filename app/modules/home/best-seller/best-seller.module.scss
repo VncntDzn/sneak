@@ -3,7 +3,7 @@
 
 %arrow {
   position: absolute;
-  top: 40vh;
+  top: 45vh;
   cursor: pointer;
   z-index: 2;
   @include lg() {
@@ -15,12 +15,30 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  width: 100%;
+
   position: relative;
   padding: 1rem;
+  @include lg() {
+    padding: 5rem 0;
+  }
 
-  @include lg () {
-    padding: 0;
+  .text {
+    @include lg() {
+      max-width: 40%;
+      margin-bottom: 5rem;
+    }
+    h1 {
+      margin-bottom: 0;
+      @include lg() {
+        font-size: 60px;
+      }
+    }
+    p {
+      font-size: normal;
+      @include lg() {
+        font-size: 18px;
+      }
+    }
   }
   .arrowLeft {
     @extend %arrow;
@@ -41,14 +59,13 @@
       // proportionally distributes sizes for the card
       flex: 0 0 auto;
       box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.5);
-      padding: 1rem;
       border-radius: 10px;
       position: relative;
       display: flex;
       align-items: center;
       height: 40vh;
       transition: all 1s ease-out;
-
+      margin: 1rem;
       &:hover {
         transition: opacity 0.3s ease;
         border: 1px solid $black;
