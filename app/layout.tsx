@@ -1,7 +1,8 @@
 import { Poppins } from "next/font/google";
 import "normalize.css";
-import Nav from "@/modules/nav";
 import styles from "./layout.module.scss";
+import { Footer, Nav } from "./modules";
+
 const inter = Poppins({
   weight: ["300", "500", "600", "700"],
   subsets: ["latin"],
@@ -22,7 +23,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <Nav />
         <main className={styles.root}>{children}</main>
-        <footer>I'm a footer</footer>
+        <Footer />
       </body>
     </html>
   );
