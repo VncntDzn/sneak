@@ -1,4 +1,4 @@
-import { Hero, Banner, BestSeller } from "@/modules";
+import { Hero, Banner, BestSeller, ProductList } from "@/modules";
 
 const Home = () => {
   return (
@@ -6,6 +6,7 @@ const Home = () => {
       <Hero />
       <Banner />
       <BestSeller />
+      <ProductList />
     </div>
   );
 };

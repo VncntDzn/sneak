@@ -1,0 +1,103 @@
+@import "@/scss/main";
+
+%image {
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+  border-radius: 10px;
+}
+%cover {
+  &:hover {
+    transition: opacity 0.3s ease;
+    &::after {
+      content: "Details";
+      font-weight: normal;
+      position: absolute;
+      text-align: center;
+      border: 1px solid $black;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: x-large;
+      backdrop-filter: blur(5px);
+      padding: 2rem;
+      border-radius: 10px;
+      width: 50%;
+    }
+  }
+}
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  position: relative;
+  padding: 1rem;
+  @include lg() {
+    padding: 5rem 0;
+  }
+
+  .text {
+    @include lg() {
+      max-width: 40%;
+      margin-bottom: 5rem;
+    }
+    h1 {
+      margin-bottom: 0;
+      @include lg() {
+        font-size: 60px;
+      }
+    }
+    p {
+      font-size: normal;
+      @include lg() {
+        font-size: 18px;
+      }
+    }
+  }
+  .photoLayout {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(100px, 1fr));
+    grid-template-rows: repeat(2, 10rem);
+    gap: 5px;
+    @include lg() {
+      grid-template-columns: repeat(3, minmax(20rem, 1fr));
+      grid-template-rows: repeat(2, 20rem);
+      width: 60%;
+    }
+
+    .div1 {
+      grid-row: 1 / 4;
+      position: relative;
+      .hoodie {
+        @extend %image;
+      }
+      @extend %cover;
+    }
+    .div2 {
+      grid-row: 1;
+      position: relative;
+      .shoes {
+        @extend %image;
+      }
+      @extend %cover;
+    }
+    .div3 {
+      grid-row: 1;
+      position: relative;
+      .shorts {
+        @extend %image;
+      }
+      @extend %cover;
+    }
+    .div4 {
+      grid-column: 2 / 5;
+      position: relative;
+      .kids {
+        @extend %image;
+      }
+      @extend %cover;
+    }
+  }
+}
