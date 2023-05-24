@@ -26,6 +26,8 @@
       cursor: pointer;
       @include lg() {
         content: $value;
+        font-size: x-large;
+        padding: 2rem;
       }
     }
   }
