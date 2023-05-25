@@ -1,0 +1,65 @@
+@import "@/scss/main";
+
+.root {
+  padding: 1rem;
+  box-shadow: 0 4px 3rem 0 rgba(0, 0, 0, 0.8);
+  color: $white;
+  background-color: $black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @include lg() {
+    padding: 1rem 15rem;
+    height: 3rem;
+  }
+  div:first-child {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .burger {
+    @include lg() {
+      display: none;
+    }
+  }
+}
+
+.drawer {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  background-color: $black;
+  height: 100vh;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+
+  .burger {
+    padding: 1.5rem;
+    align-self: flex-end;
+  }
+}
+
+.desktopContainer {
+  display: none;
+  @include lg() {
+    display: flex;
+  }
+}
+.links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 100%;
+  @include lg() {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  .link {
+    color: $white;
+    text-decoration: none;
+  }
+}

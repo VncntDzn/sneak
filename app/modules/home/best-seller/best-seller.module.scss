@@ -1,0 +1,97 @@
+@import "@/scss/main";
+
+%arrow {
+  position: absolute;
+  top: 45vh;
+  cursor: pointer;
+  z-index: 2;
+  @include lg() {
+    display: none;
+  }
+}
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  position: relative;
+  padding: 1rem;
+  @include lg() {
+    padding: 5rem 0;
+  }
+
+  .text {
+    @include lg() {
+      max-width: 40%;
+      margin-bottom: 5rem;
+    }
+    h1 {
+      margin-bottom: 0;
+      @include lg() {
+        font-size: 60px;
+      }
+    }
+    p {
+      font-size: normal;
+      @include lg() {
+        font-size: 18px;
+      }
+    }
+  }
+  .arrowLeft {
+    @extend %arrow;
+    left: 0;
+  }
+
+  .arrowRight {
+    @extend %arrow;
+    right: 0;
+  }
+  .list {
+    display: flex;
+    gap: 1rem;
+    overflow-y: hidden;
+    position: relative;
+
+    .card {
+      // proportionally distributes sizes for the card
+      flex: 0 0 auto;
+      box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.5);
+      border-radius: 10px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      height: 40vh;
+      transition: all 1s ease-out;
+      margin: 1rem;
+      &:hover {
+        transition: opacity 0.3s ease;
+        border: 1px solid $black;
+
+        &::after {
+          content: "Details";
+          font-weight: normal;
+          position: absolute;
+          text-align: center;
+          border: 1px solid $black;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          font-size: x-large;
+          cursor: pointer;
+          backdrop-filter: blur(5px);
+          padding: 2rem;
+          border-radius: 10px;
+          width: 50%;
+        }
+      }
+
+      .airJordanOneMid {
+        height: 25vh;
+        width: 90%;
+        transform: rotate(-30deg);
+      }
+    }
+  }
+}
