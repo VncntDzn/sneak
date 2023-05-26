@@ -5,7 +5,7 @@ interface DataTypes {
   name: string;
   image: StaticImageData;
   description: string;
-  price: Number;
+  price: any;
   category: "Men" | "Women" | "Kids";
 }
 const data: DataTypes[] = [
