@@ -1,10 +1,27 @@
-'use client'
+"use client";
 import { ChildrenType } from "@/types";
 import { SessionProvider } from "next-auth/react";
-import React from "react";
+import { createContext } from "react";
 
-const AuthContext = ({ children }: ChildrenType) => {
-  return <SessionProvider>{children}</SessionProvider>;
+interface AuthContextTypes {
+  loading: boolean;
+  number: Number;
+}
+const defaultState = {
+  loading: true,
+  number: 1,
 };
 
-export default AuthContext;
+export const AuthContext = createContext<AuthContextTypes>(defaultState);
+
+const AuthProvider = ({ children }: ChildrenType) => {
+  return (
+    <SessionProvider>
+      <AuthContext.Provider value={{ loading: true, number: 1 }}>
+        {children}
+      </AuthContext.Provider>
+    </SessionProvider>
+  );
+};
+
+export default AuthProvider;

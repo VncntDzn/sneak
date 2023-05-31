@@ -39,11 +39,11 @@ const BestSeller = () => {
       <div className={styles.text}>
         <h1>Our Best Sellers</h1>
         <p>
-          Lorem Ipsum has been the industry's standard dummy text ever since the
-          1500s.Lorem Ipsum has been the industry's standard
+          Lorem Ipsum has been the industry&apos;s standard dummy text ever
+          since the 1500s.Lorem Ipsum has been the industry&apos;s standard
         </p>
       </div>
-       <RiArrowLeftSLine
+      <RiArrowLeftSLine
         className={styles.arrowLeft}
         onClick={() => handleScrollHorizontal("left")}
         size={35}

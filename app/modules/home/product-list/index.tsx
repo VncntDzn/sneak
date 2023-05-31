@@ -11,8 +11,8 @@ const ProductList = () => {
       <div className={styles.text}>
         <h1>Product List</h1>
         <p>
-          Lorem Ipsum has been the industry's standard dummy text ever since the
-          1500s.Lorem Ipsum has been the industry's standard
+          Lorem Ipsum has been the industry&apos;s standard dummy text ever since the
+          1500s.Lorem Ipsum has been the industry&apos;s standard
         </p>
       </div>
 
