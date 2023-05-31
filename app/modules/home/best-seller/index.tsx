@@ -38,7 +38,7 @@ const BestSeller = () => {
               alt="Air Jordan 1 Mid"
             />
           </div>
-        ))}
+        ))} 
       </div>
     </section>
   );
