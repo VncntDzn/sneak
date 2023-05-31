@@ -19,21 +19,6 @@ const SHOES = [
   },
 ];
 const BestSeller = () => {
-  const horizontalScrollRef = useRef(null);
-  const handleScrollHorizontal = (direction: "right" | "left") => {
-    if (horizontalScrollRef.current) {
-      const scrollContainer = horizontalScrollRef.current as HTMLElement;
-      scrollContainer.scrollBy({
-        left: 100,
-        behavior: "smooth",
-      });
-      if (direction === "right") {
-        scrollContainer.scrollLeft += 100;
-      } else {
-        scrollContainer.scrollLeft -= 100;
-      }
-    }
-  };
   return (
     <section className={styles.root}>
       <div className={styles.text}>
@@ -43,17 +28,8 @@ const BestSeller = () => {
           since the 1500s.Lorem Ipsum has been the industry&apos;s standard
         </p>
       </div>
-      <RiArrowLeftSLine
-        className={styles.arrowLeft}
-        onClick={() => handleScrollHorizontal("left")}
-        size={35}
-      />
-      <RiArrowRightSLine
-        className={styles.arrowRight}
-        onClick={() => handleScrollHorizontal("right")}
-        size={35}
-      />
-      <div className={styles.list} ref={horizontalScrollRef}>
+
+      <div className={styles.list}>
         {SHOES.map(({ name, image }, i) => (
           <div className={styles.card} key={i}>
             <Image

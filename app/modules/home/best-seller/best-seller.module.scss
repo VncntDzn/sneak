@@ -1,14 +1,5 @@
 @import "@/scss/main";
 
-%arrow {
-  position: absolute;
-  top: 45vh;
-  cursor: pointer;
-  z-index: 2;
-  @include lg() {
-    display: none;
-  }
-}
 .root {
   display: flex;
   flex-direction: column;
@@ -39,20 +30,16 @@
       }
     }
   }
-  .arrowLeft {
-    @extend %arrow;
-    left: 0;
-  }
-
-  .arrowRight {
-    @extend %arrow;
-    right: 0;
-  }
   .list {
     display: flex;
     gap: 1rem;
     overflow-y: hidden;
     position: relative;
+    width: 100%;
+
+    @include lg() {
+      justify-content: center;
+    }
 
     .card {
       // proportionally distributes sizes for the card
@@ -63,6 +50,7 @@
       display: flex;
       align-items: center;
       height: 40vh;
+      width: 15rem;
       transition: all 1s ease-out;
       margin: 1rem;
       &:hover {
@@ -87,10 +75,24 @@
         }
       }
 
+      @include sm() {
+        height: 30vh;
+        width: 40vw;
+      }
+
+      @include lg() {
+        height: 30vh;
+        width: 20vw;
+      }
+
       .airJordanOneMid {
-        height: 25vh;
-        width: 90%;
+        height: 20vh;
+        width: 80%;
         transform: rotate(-30deg);
+        @include sm() {
+          height: 60%;
+          width: 80%;
+        }
       }
     }
   }
