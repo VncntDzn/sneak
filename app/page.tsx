@@ -1,4 +1,4 @@
-import { Hero, Banner, BestSeller, ProductList } from "@/modules";
+import { Hero, Banner, BestSeller, ProductList } from "(landing-page)";
 
 const Home = () => {
   return (
