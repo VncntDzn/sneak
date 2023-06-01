@@ -1,4 +1,4 @@
-import AirJordan from "@/modules/home/best-seller/assets/AirJordanOneMid.png";
+import AirJordan from "@/(landing-page)/best-seller/assets/AirJordanOneMid.png";
 import Image, { StaticImageData } from "next/image";
 import styles from "./class-rocks.module.scss";
 interface DataTypes {
